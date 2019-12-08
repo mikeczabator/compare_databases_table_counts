@@ -14,8 +14,8 @@ druid_prev=0
 
 while true
 do
-        memsql_count=`mysql --host 172.31.4.117 --port 3306 --user root taxidata_json -e 'select count(*) as "" from yellow_trips_3;'`
-        druid_count=`/usr/bin/dsql-main --host 172.31.9.93:8082 -e 'select count(*) as "druid count" from yellowtaxidata_json' --format csv`
+        memsql_count=`mysql --host 172.31.1.123 --port 3306 --user root taxidata_json -e 'select count(*) as "" from yellow_trips_3;'`
+        druid_count=`/usr/bin/dsql-main --host 172.31.0.123:8082 -e 'select count(*) as "druid count" from yellowtaxidata_json' --format csv`
         druid_count=`echo $druid_count | tr -d '\r'`
 
         printf "=============\n"
